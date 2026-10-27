@@ -18,18 +18,14 @@ CREATE TABLE products (
     cost DECIMAL(10, 2)
 );
 
-DROP TABLE orders;
-
 CREATE TABLE orders (
     order_id INT PRIMARY KEY,
-    customer_id INT PRIMARY KEY,
+    customer_id INT,
     order_date DATE,
     status VARCHAR(50),
     channel VARCHAR(50),
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
-
-
 
 CREATE TABLE deliveries (
     delivery_id INT PRIMARY KEY,
